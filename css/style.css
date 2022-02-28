@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-family: "Roboto", sans-serif;
+	transition: all ease 0.2s;
+	box-sizing: border-box;
+}
+:root {
+	background-color: #1a202c;
+}
+
+#profile {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	/* little dark shadow*/
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.panel {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#central {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	backdrop-filter: blur(5px);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#home {
+	position: relative;
+	background-image: url("../img/background.jpg");
+	background-size: cover;
+}
+#main-text {
+	display: inline;
+}
+#main-text h1 {
+	font-size: 2rem;
+	font-weight: bold;
+	color: #fff;
+}
+#main-text p {
+	font-size: 1.25rem;
+	color: #ccc;
+}
+
+#about-text {
+	width: 50%;
+}
+#about-text h2 {
+	text-align: center;
+	font-size: 1.75rem;
+	margin-bottom: 1rem;
+}
+#about-text p {
+	text-align: justify;
+}
+
+#services {
+	padding-top: 4rem;
+	gap: 2rem;
+	flex-direction: column;
+}
+#services h2 {
+	font-size: 1.75rem;
+}
+
+#services-list {
+	flex: 1;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.service {
+	width: 50%;
+}
+.service .service-icon {
+	text-align: center;
+	padding: 1rem;
+}
+
+.service .service-icon i {
+	font-size: 3rem;
+}
+
+.service .service-text {
+	padding: 2rem;
+	text-align: center;
+}
+.service .service-text h3 {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.service .service-text p {
+	font-size: 1.2rem;
+	text-align: center;
+	color: #ccc;
+}
+
+#knowledges {
+	flex-direction: column;
+	gap: 4rem;
+}
+#knowledges-list {
+	width: 100%;
+	padding: 2rem;
+	box-sizing: border-box;
+
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	justify-content: space-around;
+	align-items: center;
+	gap: 1rem;
+}
+.knowledge {
+	text-decoration: none;
+}
+.knowledge i {
+	font-size: 2rem;
+}
+.knowledge:hover {
+	transform: scale(1.2);
+}
+
+#projects {
+	flex-direction: column;
+	gap: 4rem;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.project {
+	position: relative;
+	flex: 25%;
+	overflow: hidden;
+	height: 200px;
+}
+.project .project-image {
+	width: 100%;
+	height: 100%;
+}
+.project .project-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.project .project-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	transition: all ease 0.5s;
+	opacity: 0;
+}
+.project:last-child {
+	margin-bottom: 0;
+}
+.project:hover .project-overlay {
+	transform: scale(1);
+	opacity: 1;
+	display: flex;
+}
+.project:hover img {
+	transform: scale(1.1);
+}
+.project-overlay > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+#projects h2 {
+	text-align: center;
+}
+
+#projects-list {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 2rem;
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: space-between;
+	align-items: center;
+}
+
+#contact {
+	flex-direction: column;
+	gap: 4rem;
+	justify-content: center;
+	align-items: center;
+}
+#contact h2 {
+	text-align: center;
+}
+#contact .contact-form {
+	width: 50%;
+}
+
+#contact .contact-form .btn {
+	width: 100%;
+}
+
+#contact form {
+	width: 100%;
+	display: flex;
+	gap: 2rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#contact form .form-group {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column-reverse;
+}
+#contact form .form-group label {
+	display: inline-block;
+	width: 50%;
+	color: #ccc;
+	transition: all ease 0.5s;
+	opacity: 1;
+	font-size: 1.25rem;
+	transform: translateY(2.5rem) translateX(1rem);
+}
+#contact form .form-group input:focus,
+#contact form .form-group textarea:focus {
+	outline: none;
+	border-bottom: 1px solid #76e4f7;
+}
+#contact form .form-group input:focus ~ label,
+#contact form .form-group textarea:focus ~ label,
+#contact form .form-group input:not(:placeholder-shown) ~ label,
+#contact form .form-group textarea:not(:placeholder-shown) ~ label {
+	transform: translateY(0) translateX(0);
+	position: relative;
+
+	font-size: 1rem;
+	opacity: 1;
+}
+#contact form input {
+	width: 100%;
+	padding: 1rem;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	background-color: transparent;
+	color: #fff;
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+#contact form input::placeholder {
+	color: transparent;
+}
+#contact form textarea {
+	width: 100%;
+	padding: 1rem;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	background-color: transparent;
+	color: #fff;
+	font-size: 1.25rem;
+	font-weight: bold;
+	resize: none;
+}
+#contact form textarea::placeholder {
+	color: transparent;
+}
+nav {
+	display: none;
+}
+
+.html:hover * {
+	color: #e34f26;
+}
+.css:hover * {
+	color: #1572b6;
+}
+.js:hover * {
+	color: #f0db4f;
+}
+.nodejs:hover * {
+	color: #6cc24a;
+}
+.react:hover * {
+	color: #00d8ff;
+}
+.mongo:hover * {
+	color: #589636;
+}
+.mysql:hover * {
+	color: #00758f;
+}
+.wordpress:hover * {
+	color: #21759b;
+}
+.btn {
+	padding: 1rem;
+	color: #000;
+	font-size: 1.25rem;
+	font-weight: bold;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 0.5rem;
+	transition: all ease 0.5s;
+	cursor: pointer;
+}
+.btn:hover {
+	background-color: #ccc;
+	border: 1px solid #ccc;
+}
+
+footer {
+	padding: 1rem;
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+}
+footer .links {
+	display: flex;
+	gap: 3rem;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+footer .links a i {
+	text-decoration: none;
+	color: #ccc;
+}
+footer .links a:hover i {
+	color: #fff;
+	transform: scale(1.2);
+}
+
+@media screen and (max-width: 600px) {
+	#contact .contact-form {
+		width: 90%;
+	}
+	.service {
+		width: 100%;
+	}
+	.project {
+		flex: 50%;
+	}
+}
