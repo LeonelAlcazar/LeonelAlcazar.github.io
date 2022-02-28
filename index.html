@@ -29,7 +29,7 @@
 
 				emailjs
 					.sendForm("service_cb5y40v", "template_rnbr80v", e.target)
-					.then((response) => console.log(response))
+					.then((response) => e.target.reset())
 					.catch((e) => console.log(e));
 			}
 
