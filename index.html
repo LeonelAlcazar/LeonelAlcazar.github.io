@@ -4,354 +4,188 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Leonel Alcazar - Desarrollador fullstack</title>
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/new.css" />
 		<script
 			src="https://kit.fontawesome.com/abf02515a0.js"
 			crossorigin="anonymous"
 		></script>
-		<script
-			type="text/javascript"
-			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-		></script>
-		<script type="text/javascript">
-			(function () {
-				emailjs.init("user_q7Bu734yeHZRDI14KLWRX");
-			})();
-		</script>
-		<script>
-			function sendEmail(e) {
-				e.preventDefault();
-
-				const name = document.getElementById("name").value;
-				const email = document.getElementById("email").value;
-				const message = document.getElementById("message").value;
-
-				emailjs
-					.sendForm("service_cb5y40v", "template_rnbr80v", e.target)
-					.then((response) => e.target.reset())
-					.catch((e) => console.log(e));
-			}
-
-			window.onload = function () {
-				document.getElementById("contact-form").onsubmit = sendEmail;
-			};
-		</script>
+		<title>Leonel Alcazar - Desarrollador fullstack</title>
 	</head>
 	<body>
-		<section class="panel" id="home">
-			<div id="central">
+		<nav class="sidenav">
+			<label for="menu"><i class="fa-solid fa-bars"></i></label>
+			<input type="checkbox" id="menu" />
+			<div class="nav-profile">
 				<img
 					id="profile"
 					src="https://avatars.githubusercontent.com/u/32803002"
 					alt="Leonel Alcazar"
 				/>
-				<div id="main-text">
-					<h1>Leonel Alcazar</h1>
-					<p>Desarrollador fullstack</p>
-				</div>
+				<h1>Leonel Alcazar</h1>
 			</div>
-		</section>
-		<section class="panel" id="services">
-			<h2>Servicios</h2>
-			<div id="services-list">
-				<div class="service">
-					<div class="service-icon">
-						<i class="fa-solid fa-code"></i>
-					</div>
-					<div class="service-text">
-						<h3>Diseño web</h3>
-						<p>
-							Diseño y programacion de sitios web
-							autoadministrables que se adapten a sus necesidades
-							usando HTML, CSS, JavaScript, Wordpress, etc.
-						</p>
-					</div>
-				</div>
-				<div class="service">
-					<div class="service-icon">
-						<i class="fa-solid fa-cube"></i>
-					</div>
-					<div class="service-text">
-						<h3>Aplicaciones a medida</h3>
-						<p>
-							Programacion de aplicaciones a medida de sus
-							necesidades, escalables y seguras. El codigo es
-							completamente del cliente. Usando React, NodeJS,
-							MySQL, MongoDB, etc.
-						</p>
-					</div>
-				</div>
-				<div class="service">
-					<div class="service-icon">
-						<i class="fa-solid fa-server"></i>
-					</div>
-					<div class="service-text">
-						<h3>Hosting web y correos</h3>
-						<p>
-							Administracion de infraestructura de hosting de
-							paginas web y correos corporativos. A un precio
-							justo.
-						</p>
-					</div>
-				</div>
-				<div class="service">
-					<div class="service-icon">
-						<i class="fa-solid fa-mobile"></i>
-					</div>
-					<div class="service-text">
-						<h3>Diseño y desarrollo móvil</h3>
-						<p>
-							Desarrollo de aplicaciones móviles para Android,
-							iOS, usando React Native y Expo.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="panel" id="knowledges">
-			<h2>Mis conocimientos</h2>
-			<!-- Horizontal scroll with technologies icons and names -->
-			<div id="knowledges-list">
-				<a
-					href="https://es.wikipedia.org/wiki/HTML5"
-					target="_blank"
-					class="knowledge html"
-				>
-					<div class="knowledge-icon">
-						<i class="fa-brands fa-html5"></i>
-					</div>
-					<div class="knowledge-text">
-						<h3>HTML</h3>
-					</div>
-				</a>
-				<a
-					href="https://developer.mozilla.org/es/docs/Web/CSS"
-					target="_blank"
-					class="knowledge css"
-				>
-					<div class="knowledge-icon">
-						<i class="fa-brands fa-css3-alt"></i>
-					</div>
-					<div class="knowledge-text">
-						<h3>CSS</h3>
-					</div>
-				</a>
-				<a
-					href="https://developer.mozilla.org/es/docs/Web/JavaScript"
-					target="_blank"
-					class="knowledge js"
-				>
-					<div class="knowledge-icon">
-						<i class="fa-brands fa-js-square"></i>
-					</div>
-					<div class="knowledge-text">
-						<h3>JavaScript</h3>
-					</div>
-				</a>
-				<a
-					href="https://nodejs.org/es/"
-					target="_blank"
-					class="knowledge nodejs"
-				>
-					<div class="knowledge-icon">
-						<i class="fa-brands fa-node-js"></i>
-					</div>
-					<div class="knowledge-text">
-						<h3>NodeJS</h3>
-					</div>
-				</a>
-				<a
-					href="https://es.reactjs.org/"
-					target="_blank"
-					class="knowledge react"
-				>
-					<div class="knowledge-icon">
-						<i class="fa-brands fa-react"></i>
-					</div>
-					<div class="knowledge-text">
-						<h3>React</h3>
-					</div>
-				</a>
-				<a
-					href="https://reactnative.dev/"
-					target="_blank"
-					class="knowledge react"
-				>
-					<div class="knowledge-icon">
-						<i class="fa-brands fa-react"></i>
-					</div>
-					<div class="knowledge-text">
-						<h3>React Native</h3>
-					</div>
-				</a>
-				<a
-					href="https://www.mongodb.com/es"
-					target="_blank"
-					class="knowledge mongo"
-				>
-					<div class="knowledge-icon">
-						<i class="fa-solid fa-database"></i>
-					</div>
-					<div class="knowledge-text">
-						<h3>MongoDB</h3>
-					</div>
-				</a>
-				<a
-					href="https://wordpress.com/es/"
-					target="_blank"
-					class="knowledge wordpress"
-				>
-					<div class="knowledge-icon">
-						<i class="fa-brands fa-wordpress"></i>
-					</div>
-					<div class="knowledge-text">
-						<h3>Wordpress</h3>
-					</div>
-				</a>
-				<a
-					href="https://www.mysql.com/"
-					target="_blank"
-					class="knowledge mysql"
-				>
-					<div class="knowledge-icon">
-						<i class="fa-solid fa-database"></i>
-					</div>
-					<div class="knowledge-text">
-						<h3>MySQL</h3>
-					</div>
-				</a>
-			</div>
-		</section>
-		<section id="projects">
-			<h2>Proyectos publicos</h2>
-			<!-- Project list -->
-			<div id="projects-list">
-				<div class="project">
-					<div class="project-image">
-						<img src="img/project-1.png" alt="Jixed Wallet" />
-					</div>
-					<div class="project-overlay">
-						<h3>Jixed wallet</h3>
-						<div>
-							<a href="https://extremewallet.herokuapp.com/"
-								>Ver demo</a
-							>
-							<a
-								href="https://github.com/LeonelAlcazar/JixedWallet"
-								>Ver repositorio</a
-							>
-						</div>
-					</div>
-				</div>
-				<div class="project">
-					<div class="project-image">
-						<img src="img/project-2.png" alt="Chatly" />
-					</div>
-					<div class="project-overlay">
-						<h3>Chatly</h3>
-						<div>
-							<a
-								href="https://github.com/LeonelAlcazar/Chatly-Frontend"
-								>Ver repositorio</a
-							>
-						</div>
-					</div>
-				</div>
-				<div class="project">
-					<div class="project-image">
-						<img src="img/project-3.png" alt="StreamFree" />
-					</div>
-					<div class="project-overlay">
-						<h3>StreamFree</h3>
-						<div>
-							<a
-								href="https://github.com/LeonelAlcazar/streamfree"
-								>Ver repositorio</a
-							>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="panel" id="contact">
-			<h2>Contactame</h2>
-			<div class="contact-form">
-				<form action="" id="contact-form">
-					<div class="form-group">
-						<input
-							type="text"
-							class="form-control"
-							id="name"
-							name="name"
-							placeholder="Nombre"
-							required
-						/>
-						<label for="name">Nombre</label>
-					</div>
-					<div class="form-group">
-						<input
-							type="email"
-							class="form-control"
-							id="email"
-							name="email"
-							placeholder="Email"
-							required
-						/>
-						<label for="email">Email</label>
-					</div>
-					<div class="form-group">
-						<textarea
-							class="form-control"
-							id="message"
-							name="message"
-							rows="3"
-							placeholder="Mensaje"
-							required
-						></textarea>
-						<label for="message">Mensaje</label>
-					</div>
-					<button
-						type="submit"
-						class="btn btn-primary"
-						value="Enviar"
-					>
-						Enviar
-					</button>
-				</form>
-			</div>
-		</section>
-		<footer>
-			<div class="links">
-				<a href="https://github.com/LeonelAlcazar" target="_blank">
-					<i class="fa-brands fa-github"></i>
-				</a>
-				<a
-					href="https://www.linkedin.com/in/leonelalcazar/"
-					target="_blank"
-				>
-					<i class="fa-brands fa-linkedin"></i>
-				</a>
-				<a
-					href="https://api.whatsapp.com/send?phone=543512901337&text=Quisiera%20contratar%20tus%20servicios"
-					target="_blank"
-				>
-					<i class="fa-brands fa-whatsapp"></i>
-				</a>
-				<a href="mailto:leonelagustinalcazar@gmail.com">
-					<i class="fa-solid fa-envelope"></i>
-				</a>
-			</div>
-			<p>&copy; Todos los derechos reservados</p>
-		</footer>
-		<nav>
-			<ul>
-				<li>Home</li>
-				<li>Services</li>
-				<li>Knowledges</li>
-				<li>Projects</li>
-				<li>Contact</li>
+			<div class="divider"></div>
+			<ul class="nav-links">
+				<li><a href="#about">Sobre mi</a></li>
+				<li><a href="#projects">Proyectos</a></li>
+				<li><a href="#experience">Experiencia</a></li>
 			</ul>
+			<section class="nav-social">
+				<a
+					class="social"
+					href="https://www.linkedin.com/in/leonelalcazar/"
+					id="linkedin"
+					target="_blank"
+				>
+					<i class="fa-brands fa-linkedin-in"></i>
+				</a>
+				<a
+					class="social"
+					href="https://github.com/LeonelAlcazar"
+					id="github"
+					target="_blank"
+					><i class="fa-brands fa-github"></i
+				></a>
+			</section>
 		</nav>
+		<div class="content">
+			<h2 class="center title">Desarrollador fullstack</h2>
+			<p class="center subtitle">NodeJS, JavaScript</p>
+			<section id="about">
+				<h3>Sobre mi</h3>
+				<p>
+					Soy un Cordobes, programador fullstack y autodidacta desde
+					los 13 años. Apasionado por la computacion, la tecnologia y
+					la web. Me gusta aprender nuevas tecnologias y me gusta
+					hacer proyectos que exploren nuevas ideas.
+				</p>
+				<p>
+					Me considero una persona responsable, con una gran
+					perspectiva y una gran capacidad de adaptacion. Me gusta
+					trabajar en equipo y aprender de los demas. Soy una persona
+					que siempre esta dispuesta a aprender nuevas tecnologias y
+					nuevos desafios.
+				</p>
+				<p>
+					Actualmente trabajo con tecnologias basadas en NodeJS y
+					JavaScript usadas tanto en el frontend como en el backend,
+					como React, React Native, Next.js, Express, MongoDB,
+					Firebase, etc.
+				</p>
+			</section>
+			<section id="projects">
+				<h3>Proyectos publicos</h3>
+				<div class="projects-container">
+					<div class="project">
+						<div class="project-image">
+							<img src="img/project-1.png" alt="Jixed Wallet" />
+						</div>
+						<div class="project-overlay">
+							<h3>Jixed wallet</h3>
+							<div>
+								<a
+									href="https://extremewallet.herokuapp.com/"
+									target="_blank"
+									>Ver demo</a
+								>
+								<a
+									href="https://github.com/LeonelAlcazar/JixedWallet"
+									target="_blank"
+									>Ver repositorio</a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="project">
+						<div class="project-image">
+							<img src="img/project-2.png" alt="Chatly" />
+						</div>
+						<div class="project-overlay">
+							<h3>Chatly</h3>
+							<div>
+								<a
+									href="https://github.com/LeonelAlcazar/Chatly-Frontend"
+									target="_blank"
+									>Ver repositorio</a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="project">
+						<div class="project-image">
+							<img src="img/project-3.png" alt="StreamFree" />
+						</div>
+						<div class="project-overlay">
+							<h3>StreamFree</h3>
+							<div>
+								<a
+									href="https://github.com/LeonelAlcazar/streamfree"
+									target="_blank"
+									>Ver repositorio</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="experience">
+				<h3>Experiencia laboral</h3>
+				<ul>
+					<li>
+						<div>
+							<h4>
+								<a
+									href="https://www.hedy.rocks/"
+									target="_blank"
+									>Hedy Rocks</a
+								>
+							</h4>
+							<p>
+								<i>Desarrollador fullstack NodeJS</i>
+							</p>
+							<p>
+								<strong>Diciembre 2019 - Actualmente</strong>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</section>
+		</div>
+		<footer>
+			<section id="contact">
+				<h3>Información de contacto</h3>
+				<p>
+					<strong>Email:</strong>
+					<a href="mailto:leonelagustinalcazar@gmail.com">
+						leonelagustinalcazar@gmail.com
+					</a>
+				</p>
+				<p>
+					<strong>Teléfono:</strong>
+					<a href="tel:+543512901337">+54 351 290 1337</a>
+				</p>
+			</section>
+
+			<div class="divider"></div>
+			<div class="bottom">
+				<p>Copyright &copy; Leonel Alcazar 2022</p>
+				<section class="footer-social">
+					<a
+						class="social"
+						href="https://www.linkedin.com/in/leonelalcazar/"
+						id="linkedin"
+						target="_blank"
+					>
+						<i class="fa-brands fa-linkedin-in"></i>
+					</a>
+					<a
+						class="social"
+						href="https://github.com/LeonelAlcazar"
+						id="github"
+						target="_blank"
+						><i class="fa-brands fa-github"></i
+					></a>
+				</section>
+			</div>
+		</footer>
 	</body>
 </html>

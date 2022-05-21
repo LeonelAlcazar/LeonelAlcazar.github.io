@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	transition: all ease 0.2s;
+	box-sizing: border-box;
+
+	--vertical-bs: 0 4px 8px 0px rgba(0, 0, 0, 0.25);
+	--horizontal-bs: 4px 0px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+.sidenav {
+	background-color: #2d3436;
+	z-index: 10;
+}
+
+.divider {
+	margin-right: 1rem;
+	margin-left: 1rem;
+	height: 1px;
+	background: #ccc;
+}
+
+.nav-links {
+	background-color: #2d3436;
+	padding: 1rem;
+	list-style: none;
+}
+.nav-links li {
+	padding: 0.5rem 0;
+}
+.nav-links li a {
+	text-decoration: none;
+	color: #fff;
+}
+.nav-links li::after {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 2px;
+	background: #fff;
+	transition: width 0.2s;
+}
+.nav-links li:hover::after {
+	width: 100px;
+}
+.nav-social {
+	padding: 0 1rem;
+	margin-bottom: 1rem;
+}
+.social {
+	color: #fff;
+	display: inline-flex;
+	width: 2rem;
+	height: 2rem;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.25rem;
+	text-decoration: none;
+	border-radius: 5px;
+}
+.social#linkedin:hover {
+	background-color: #0e76a8;
+}
+.social#github:hover {
+	background-color: #000;
+}
+.sidenav .nav-profile h1 {
+	color: #fff;
+	text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+	.sidenav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		box-shadow: var(--vertical-bs);
+	}
+	.sidenav .nav-profile {
+		padding: 1rem;
+		text-align: center;
+		background-color: #2d3436;
+		color: #fff;
+		border: none;
+	}
+	.sidenav .nav-profile img {
+		display: none;
+	}
+	.sidenav input {
+		display: none;
+	}
+	.sidenav label {
+		position: absolute;
+		top: 1.1rem;
+		right: 1rem;
+		font-size: 1.5rem;
+		color: #fff;
+	}
+	.nav-links {
+		display: none;
+	}
+	.nav-social {
+		display: none;
+	}
+	#menu:checked ~ .nav-links,
+	#menu:checked ~ .nav-social {
+		display: block;
+	}
+	.content {
+		margin-top: 3rem;
+		padding: 2rem 2rem;
+		background: #636e72;
+		min-height: 100vh;
+		color: #fff;
+		font-size: 1.2rem;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.sidenav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 250px;
+		padding: 0.25rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		box-shadow: var(--horizontal-bs);
+	}
+	.sidenav input,
+	.sidenav label {
+		display: none;
+	}
+	.sidenav .nav-profile {
+		width: 100%;
+		margin-top: 1rem;
+	}
+	.sidenav .nav-profile img {
+		display: block;
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		margin: auto;
+		margin-bottom: 0.5rem;
+	}
+	.sidenav .nav-profile h1 {
+		margin-bottom: 0.5rem;
+	}
+	.sidenav .nav-links {
+		flex: 1;
+	}
+	.content,
+	footer {
+		margin-left: 250px;
+	}
+	.content {
+		padding: 2rem 4rem;
+		background: #636e72;
+		min-height: 100vh;
+		color: #fff;
+		font-size: 1.2rem;
+	}
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+	margin-bottom: 0.5rem;
+}
+.subtitle {
+	color: #ccc;
+}
+
+.center {
+	text-align: center;
+}
+
+.content section {
+	margin-top: 150px;
+}
+.content section p {
+	margin-bottom: 1rem;
+	text-align: justify;
+	color: #eee;
+}
+.projects-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 1rem;
+	margin-top: 1rem;
+}
+.project {
+	background-color: #2d3436;
+	height: 100%;
+	padding: 1rem;
+	border-radius: 5px;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+	position: relative;
+	overflow: hidden;
+	box-shadow: var(--vertical-bs);
+}
+.project .project-image {
+	height: 100%;
+	width: 100%;
+}
+.project img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.project .project-overlay {
+	background: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+}
+.project .project-overlay h3 {
+	color: #fff;
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+.project .project-overlay p {
+	color: #fff;
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+.project .project-overlay div {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: center;
+}
+.project .project-overlay a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.project:hover .project-overlay {
+	display: flex;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 1;
+}
+
+#experience ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#experience ul li {
+	margin-bottom: 1rem;
+}
+
+#experience ul li div * {
+	margin: 0;
+}
+#experience ul li div h4 a {
+	color: #fff;
+	text-decoration: none;
+}
+#experience ul li div p {
+	font-size: 1rem;
+}
+
+footer {
+	background-color: #2f3640;
+	color: #fff;
+	padding: 1rem 0;
+}
+footer .divider {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+footer #contact {
+	padding: 0 1rem;
+}
+footer #contact h3 {
+	margin-bottom: 0.5rem;
+}
+footer #contact p a {
+	color: #fff;
+	text-decoration: none;
+}
+footer .bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem;
+}
+.footer-social {
+}
